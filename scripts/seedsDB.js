@@ -9,55 +9,55 @@ mongoose.connect(
 const freeLancerSeed = [
     {
         name: "John Doe",
-        postition: "Developer",
+        position: "Developer",
         bio: "I like Javascript",
         rate: 25
     },
     {
         name: "Jane Doe",
-        postition: "Landscaper",
+        position: "Landscaper",
         bio: "I like landscaping",
         rate: 20
     },
     {
         name: "Gordan Ramsey",
-        postition: "Chef",
+        position: "Chef",
         bio: "I like cooking",
         rate: 100
     },
     {
         name: "Tom Bird",
-        postition: "Dog Walker",
+        position: "Dog Walker",
         bio: "I like dogs",
         rate: 10
     },
     {
         name: "Cesar Milan",
-        postition: "Dog Walker",
+        position: "Dog Walker",
         bio: "I like dogs a lot",
         rate: 20
     },
     {
         name: "Beethoven",
-        postition: "Musician",
+        position: "Musician",
         bio: "I like music",
         rate: 20
     },
     {
         name: "Julian Assange",
-        postition: "Developer",
+        position: "Developer",
         bio: "I like hac.. I mean developing from pris... I mean the comfort of my home",
         rate: 60
     },
     {
         name: "Tom Guy",
-        postition: "Landscaper",
+        position: "Landscaper",
         bio: "I like land",
         rate: 30
     },
     {
         name: "Sonny Guy",
-        postition: "Care Taker",
+        position: "Care Taker",
         bio: "I like taking care",
         rate: 30
     }
