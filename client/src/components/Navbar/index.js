@@ -18,7 +18,7 @@ const Navbar =()=>{
                 isActive={ () => window.location.pathname === "/" || window.location.pathname ==="/search"} 
                 to="/"
                 >
-               Search Jobs 
+               Search Freelancers 
                 </NavLink>
             </li>
             <li className="nav-link">
