@@ -1,3 +1,3 @@
 module.exports = {
-    Freelancer: require("./freelancer")
+    Freelancer: require("./Freelancer")
 };
