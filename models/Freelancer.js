@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const freelancerSchema = new Schema({
     name: {type: String, required: true},
-    positions: {type: String, require: true},
+    positions: {type: String, required: true},
     bio: {type: String, required: true},
-    rate: {Type: Number, required: true}
+    rate: {type: Number, required: true}
 });
 
-const Freelance = mongoose.model("Freelance", freelancerSchema);
+const Freelance = mongoose.model("Freelancer", freelancerSchema);
 
-module.exports = Freelancer;
+module.exports = Freelance;
