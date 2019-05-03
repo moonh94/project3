@@ -2,13 +2,13 @@ import React from "react";
 
 function ResultList(props) {
   
-    const searchData = props.results.filter(result => result.searched === true)
+    const searchData = props.freeLancerSeed.filter(freelancer => freelancer.position //??????)
   
     return (
     <ul className="list-group">
-      {props.results.map(result => (
+      {searchData.map(freelancer => (
         <li className="list-group-item" key={result.id}>
-          <img alt={result.title} className="img-fluid" src={result.images.original.url} />
+          <img alt={freelancer.title} className="img-fluid" src={freelancer.images.original.url} />
         </li>
       ))}
     </ul>
