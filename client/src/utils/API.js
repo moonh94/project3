@@ -11,3 +11,7 @@ export default {
         return axios.get(`/api/freelancers/searchresults/${position}/${location}`)
     }
 };
+
+//registerFreelancer: function(name, position, bio, location, rate){
+//    return axios.post(`/api/freealancers`)
+// }
