@@ -14,7 +14,7 @@ class Register extends Component {
         position: "",
         bio: "",
         location: "",
-        rate: ""
+        rate: 0
     };
 
     componentDidMount() {
