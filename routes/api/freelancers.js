@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/freelancersController")
+const freelancersController = require("../../controllers/freelancersController")
 
 router.route("/")
 
@@ -11,7 +11,9 @@ router.route("/confirm")
 
 router.route("/form")
 
-router.route("/freelancerprofile/:id")
+router // This will be routed to when you click on a freelancer profile after the search
+    .route("/:id")
+    .get(freelancersController.getFreelancerByID)
 
 router
     .route("/searchresults/:position/:location")

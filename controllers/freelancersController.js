@@ -26,8 +26,14 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     searchByPositionAndLocation: function(req, res){
-        db.Freelancer   
+        db.Freelancer 
             .find({position: req.params.position, location: req.params.location})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err))
+    },
+    getFreelancerByID: function(req, res){
+        db.Freelancer 
+            .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
@@ -39,8 +45,4 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     }
     
-
-
-
-
 }

@@ -1,7 +1,7 @@
-const router = require("express");
+const router = require("express").Router();
 const freelancerRoutes = require("./freelancers")
 
 //Freelancer routes
-router.request("./freelancers", freelancerRoutes);
+router.use("/freelancers", freelancerRoutes);
 
 module.exports = router;
