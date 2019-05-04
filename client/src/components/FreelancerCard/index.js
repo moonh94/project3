@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 
 
-x
+
 function FreelancerCard(props) {
     return (
         <div className="card" style="width: 50rem;">

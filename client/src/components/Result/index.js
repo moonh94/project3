@@ -1,18 +1,16 @@
 import React from "react";
+import "./style.css";
 
-function ResultList(props) {
-  
-    const searchData = props.freeLancerSeed.filter(freelancer => freelancer.position //??????)
-  
-    return (
-    <ul className="list-group">
-      {searchData.map(freelancer => (
-        <li className="list-group-item" key={result.id}>
-          <img alt={freelancer.title} className="img-fluid" src={freelancer.images.original.url} />
-        </li>
-      ))}
-    </ul>
+// This file exports both the List and ListItem components
+
+export function List({ children }) {
+  return (
+    <div className="list-overflow-container">
+      <ul className="list-group">{children}</ul>
+    </div>
   );
 }
 
-export default ResultList;
+export function ListItem({ children }) {
+  return <li className="list-group-item">{children}</li>;
+}
