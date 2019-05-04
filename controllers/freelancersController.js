@@ -7,23 +7,18 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))   
     },
-    searchFreelancerByPosition: function(req, res){
-        db.Freelancer   
-            .find(req.params.position)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err))
-    },
     searchFreelancerByName: function(req, res){
         db.Freelancer   
             .find({name: req.params.name})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
-    searchByLocation: function(req, res){
+    searchFreelancerByLocation: function(req, res){
         db.Freelancer   
             .find({location: req.params.location})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
+            // Doesn't work, see API.js and freelancers.js
     },
     searchByPositionAndLocation: function(req, res){
         db.Freelancer 
@@ -34,6 +29,12 @@ module.exports = {
     getFreelancerByID: function(req, res){
         db.Freelancer 
             .findById(req.params.id)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err))
+    },
+    searchFreelancerByPosition: function(req, res){
+        db.Freelancer   
+            .find({position: req.params.position})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },

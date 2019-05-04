@@ -16,6 +16,15 @@ router // This will be routed to when you click on a freelancer profile after th
     .get(freelancersController.getFreelancerByID)
 
 router
+    .route("/searchresults/:position")
+    .get(freelancersController.searchFreelancerByPosition)
+
+// router
+//     .route("/searchresults/:location")
+//     .get(freelancersController.searchFreelancerByLocation)
+    // Doesn't work, commented out so it doesn't mess with route above
+
+router
     .route("/searchresults/:position/:location")
     .get(freelancersController.searchByPositionAndLocation)
 

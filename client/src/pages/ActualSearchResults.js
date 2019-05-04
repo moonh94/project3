@@ -5,11 +5,7 @@ import SearchBar from "../components/SearchBar";
 
 class Search extends Component {
     state = {
-        freelancerList: [],
-        position: "",
-        location: "",
-        bio: "",
-        rate: 0
+        freelancer: [{}]
     }
 
 
@@ -19,8 +15,8 @@ class Search extends Component {
     }
 
     loadResults = () => {
-        API.getFreelancerByPositionAndLocation()
-            .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
+        API.getFreelancerByPositionAndLocation(this.props.match.params.position.location)
+            .then(res => this.setState({ freelancer: res.data}))
             .catch(err => console.log(err))
     }
 
