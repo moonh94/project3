@@ -11,6 +11,10 @@ router.route("/confirm")
 
 router.route("/form")
 
+router
+    .route("/search")
+    .get(freelancersController.findAll)
+    
 router // This will be routed to when you click on a freelancer profile after the search
     .route("/:id")
     .get(freelancersController.getFreelancerByID)
@@ -27,6 +31,10 @@ router
 router
     .route("/searchresults/:position/:location")
     .get(freelancersController.searchByPositionAndLocation)
+
+router
+    .route("/register")
+    .post(freelancersController.createUser)
 
 module.exports = router;
     

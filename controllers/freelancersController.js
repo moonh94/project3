@@ -44,6 +44,13 @@ module.exports = {
             .sort({rate: -1})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
+    },
+    createUser: function(req, res){
+        db.Freelancer
+            .create(req.body)
+            .then(res.json("freelancer added!"))
+            // .then(dbModel => res.json("user created!"))
+            .catch(err => res.status(422).json(err))
     }
     
 }

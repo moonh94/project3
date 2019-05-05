@@ -6,7 +6,7 @@ function SearchBar(props) {
         <div className="input-group input-group-lg">
             <input className="form-control" type="text" {...props} />
             <input className="form-control" type="text" {...props} />
-            <button id="submit-btn" class="btn btn-primary" type="submit">Submit</button>
+            {/* <button id="submit-btn" class="btn btn-primary" type="submit">Submit</button> */}
         </div>
     );
 }
