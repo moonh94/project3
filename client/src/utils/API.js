@@ -22,3 +22,4 @@ export default {
         return axios.post("/api/freelancers/freelancers" + id, userData)
     }
 };
+
