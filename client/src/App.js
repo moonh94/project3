@@ -5,7 +5,9 @@ import Home from "./pages/Home";
 import Search from "./pages/SearchResults";
 import Confirm from "./pages/Confirm";
 import Footer from "./components/Footer";
-import Jumbotron from "./components/Jumbotron";
+import Modal from "./components/Modal";
+
+
 
 
 function App() {
@@ -17,8 +19,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/search" component = {Search} />
         <Route exact path="/confirm" component ={Confirm} />
+        <Route exact path="/login" component ={Modal} />
       </Switch>
-      <Jumbotron />
 
       <Footer />
       </div>
