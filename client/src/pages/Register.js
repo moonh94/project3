@@ -40,7 +40,7 @@ class Register extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.name && this.state.position && this.state.location) {
-            API.registerFreelancer({
+            API.createUser({
                 name: this.state.name,
                 position: this.state.position,
                 bio: this.state.bio,
@@ -59,30 +59,39 @@ class Register extends Component {
                     <h1>Become a Freelancer!</h1>
                 </Jumbotron>
                 <form>
+                    <h2>Name: {this.state.name}</h2>
                     <Input
                         value={this.state.name}
                         onChange={this.handleInputChange}
                         name="name"
                         placeholder="Name"
+                        type="text"
                     />
+                    <h2>Position {this.state.position}</h2>
                     <Input
                         value={this.state.position}
                         onChange={this.handleInputChange}
                         name="position"
                         placeholder="Position"
+                        type="text"
                     />
+                    <h2>Bio: {this.state.bio}</h2>
                     <TextArea
                         value={this.state.bio}
                         onChange={this.handleInputChange}
                         name="bio"
                         placeholder="Tell Us About Yourself"
+                        type="text"
                     />
+                    <h2>Location: {this.state.location}</h2>
                     <Input
                         value={this.state.position}
                         onChange={this.handleInputChange}
                         name="location"
                         placeholder="Location"
+                        type="text"
                     />
+                    <h2>Rate: {this.state.rate}</h2>
                     <Input
                         value={this.state.rate}
                         onChange={this.handleInputChange}
