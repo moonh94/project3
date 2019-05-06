@@ -1,11 +1,13 @@
 import React from "react";
-import "./style.css";
+// import "./style.css";
+
 
 
 
 function FreelancerCard(props) {
     return (
-        <div className="card" style="width: 50rem;">
+        // didn't like what was in the div below before: "style="width: 50rem;""
+        <div className="card" >
             <img className="card-img-top" alt={props.name} src={props.image}/>
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>
@@ -18,10 +20,10 @@ function FreelancerCard(props) {
                                 <strong>Position:</strong> {props.position}
                             </li>
                             <li>
-                                <strong>Bio:</strong> {props.bio}
+                                <strong>Location:</strong> {props.location}
                             </li>
                             <li>
-                                <strong>Location:</strong> {props.location}
+                                <strong>Bio:</strong> {props.bio}
                             </li>
                             <li>
                                 <strong>Rate:</strong> {props.rate}
@@ -29,6 +31,7 @@ function FreelancerCard(props) {
                         </ul>
                     </div>
                     <a href="#" className="btn btn-primary">Request Service</a>
+                    {"   "}
                     <a href="#" className="btn btn-primary">Go Back</a>
                 </div>
             </div>

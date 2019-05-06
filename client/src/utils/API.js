@@ -5,7 +5,7 @@ export default {
         return axios.get("/api/freelancers")
     },
     getFreelancer: function(id){
-        return axios.get("/api/freelancers/freelancers" + id)
+        return axios.get("/api/freelancers/" + id)
     },
     searchFreelancerByPosition: function(position){
         return axios.get(`/api/freelancers/searchresults/${position}`)
@@ -19,6 +19,6 @@ export default {
     },
     //This will be for a freelancer to create his/her own profile 
     createUser: function(id, userData){
-        return axios.post("/api/freelancers/freelancers" + id, userData)
+        return axios.post("/api/freelancers/freelancers/" + id, userData)
     }
 };
