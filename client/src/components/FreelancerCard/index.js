@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 
 
-x
+
 function FreelancerCard(props) {
     return (
         <div className="card" style="width: 50rem;">
@@ -21,7 +21,10 @@ function FreelancerCard(props) {
                                 <strong>Bio:</strong> {props.bio}
                             </li>
                             <li>
-                                <strong>Website:</strong> {props.location}
+                                <strong>Location:</strong> {props.location}
+                            </li>
+                            <li>
+                                <strong>Rate:</strong> {props.rate}
                             </li>
                         </ul>
                     </div>

@@ -1,18 +1,18 @@
 import React from "react";
+import "./style.css";
 
-function ResultList(props) {
-  
-    const searchData = props.results.filter(result => result.searched === true)
-  
-    return (
-    <ul className="list-group">
-      {props.results.map(result => (
-        <li className="list-group-item" key={result.id}>
-          <img alt={result.title} className="img-fluid" src={result.images.original.url} />
-        </li>
-      ))}
-    </ul>
+// This file exports both the List and ListItem components
+
+export function resultList({ children }) {
+
+  return (
+    <div className="list-overflow-container">
+      <ul className="list-group">{children}</ul>
+    </div>
   );
 }
 
-export default ResultList;
+export function resultListItem({ children }) {
+
+  return <li className="list-group-item">{children}</li>;
+}

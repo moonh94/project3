@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
@@ -79,3 +80,6 @@ import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 // }
 
 // export default Example;
+=======
+export {default} from "./Login";
+>>>>>>> 7dfea7f0896d2a352a3cb82d5797d572f8b162cb
