@@ -36,18 +36,31 @@ class ActualSearchResults extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-
+        API.getFreelancerByPositionAndLocation(this.state.position, this.state.location)
+            .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
+            .catch(err => console.log(err))
+        console.log("clicked")
+        
 
     }
     render() {
         return (
             <>
                 <h2>Search</h2>
-                <SearchBar />
-                    <SearchButton
-                        disabled={!(this.state.freelancerList.position && this.state.freelancerList.location)}
-                        onClick={this.handleFormSubmit}
-                    />
+                <SearchBar 
+                name="position"
+                value={this.state.position} 
+                onChange={this.handleInputChange}
+                />
+                <SearchBar 
+                name="location"
+                value={this.state.location} 
+                onChange={this.handleInputChange}
+                />
+                <SearchButton
+                    disabled={!(this.state.freelancerList.position && this.state.freelancerList.location)}
+                    onClick={this.handleFormSubmit}
+                />
                 {this.state.freelancerList.length ? (
                     <List>
                         {this.state.freelancerList.map(freelancer => (

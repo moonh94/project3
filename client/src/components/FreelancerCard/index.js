@@ -1,4 +1,5 @@
 import React from "react";
+import RequestWorkForm from "../RequestWorkForm";
 // import "./style.css";
 
 
@@ -33,6 +34,7 @@ function FreelancerCard(props) {
                     <a href="#" className="btn btn-primary">Request Service</a>
                     {"   "}
                     <a href="#" className="btn btn-primary">Go Back</a>
+                    <RequestWorkForm />
                 </div>
             </div>
         
