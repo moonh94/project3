@@ -10,4 +10,4 @@ class Confirmation extends Component{
     }
 }
 
-export default Confirmation;
+export default Confirmation ;

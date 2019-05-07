@@ -12,10 +12,10 @@ class Register extends Component {
         freelancers: [],
         name: "",
         position: "",
-        bio: "",
         location: "",
+        bio: "",
         rate: 0,
-        email: "",
+        email:"",
         password: ""
     };
 
@@ -45,13 +45,14 @@ class Register extends Component {
             API.createUser({
                 name: this.state.name,
                 position: this.state.position,
-                bio: this.state.bio,
                 location: this.state.location,
+                bio: this.state.bio,
                 rate: this.state.rate,
                 email: this.state.email,
                 password: this.state.password
             })
                 .then(res => this.loadFreelancers())
+                .then
                 .catch(err => console.log(err));
         }
     };
@@ -102,19 +103,21 @@ class Register extends Component {
                         name="rate"
                         placeholder="Hourly Rate"
                     />
-                     <h2>Email: {this.state.email}</h2>
+                    <h2>Email: {this.state.email}</h2>
                     <Input
                         value={this.state.email}
                         onChange={this.handleInputChange}
-                        name="email"
-                        placeholder="Hourly Rate"
+                        name="password"
+                        placeholder="Email"
                     />
+                     
                     <h2>Password: {this.state.password}</h2>
                     <Input
                         value={this.state.password}
                         onChange={this.handleInputChange}
                         name="password"
                         placeholder="Password"
+                        type="password"
                     />
                    
                     <FormBtn
