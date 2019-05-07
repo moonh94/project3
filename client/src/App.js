@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Jumbotron from "./components/Jumbotron";
 import FreelancerProfile from "./pages/FreelancerProfile";
 import ActualSearchResults from "./pages/ActualSearchResults";
+import Register from "./pages/Register"
 import SearchResults from "./pages/SearchResults";
 
 class App extends Component {
@@ -18,10 +19,12 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/search" component = {SearchResults} />
+          <Route exact path="/search" component = {ActualSearchResults} />
+          <Route exact path="/register" component = {Register} />
           <Route exact path="/confirm" component ={Confirm} />
           <Route exact path="/freelancers/:id" component ={FreelancerProfile} />
-          <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} />
+          <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} 
+          />
         </Switch>
         <Jumbotron />
   
