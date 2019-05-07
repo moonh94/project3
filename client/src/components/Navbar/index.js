@@ -90,7 +90,7 @@ const NavBar = () => {
                             className="nav-link" 
                             activeClassName ="active"
                             isActive={() => window.location.pathname === "/register"}
-                            to="/search">
+                            to="/register">
                             Register
                         </NavLink>
                     </li>
