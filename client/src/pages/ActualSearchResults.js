@@ -6,7 +6,7 @@ import SearchButton from "../components/SearchButton";
 import ListItem from "../components/ListItem";
 import List from "../components/List";
 
-class SearchResults extends Component {
+class ActualSearchResults extends Component {
     state = {
         freelancerList: [],
         name: "",
@@ -16,15 +16,13 @@ class SearchResults extends Component {
         rate: 0
     }
 
-
-
     componentDidMount() {
         this.loadResults();
     }
 
     loadResults = () => {
-        API.getFreelancers()
-            .then(res => this.setState({ freelancerList: res.data, name: "", position: "", location: "", bio: "", rate: 0 }))
+        API.getFreelancerByPositionAndLocation(this.props.match.params.position, this.props.match.params.location)
+            .then(res => this.setState({ freelancerList: res.data}))
             .catch(err => console.log(err))
     }
 
@@ -36,41 +34,33 @@ class SearchResults extends Component {
         });
     };
 
-    handleInputChange2 = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
     handleFormSubmit = (event) => {
         event.preventDefault();
-        // this.state.SearchBar.props.position, this.state.match.SearchBar.props.location
-        API.getFreelancerByPositionAndLocation()
+        API.getFreelancerByPositionAndLocation(this.state.position, this.state.location)
             .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
             .catch(err => console.log(err))
         console.log("clicked")
-        console.log(this.state.SearchBar.position)
+        
 
     }
     render() {
         return (
-            <div>
-    <h2 style={{ textAlign: "center", paddingTop: 50 }}>Search</h2>
-               <span className="rowSearch" style={{ paddingTop: 0 }}>
+            <>
+                <h2>Search</h2>
                 <SearchBar 
-                    value={this.state.position} 
-                    onChange={this.handleInputChange}
-                   
-                    
-                    />
-
-                    <SearchButton
-                        style={{display: "inline-flex", flexDirection: "row"}}
-                        disabled={!(this.state.position && this.state.location)}
-                        onClick={this.handleFormSubmit}
-                    />
-                </span>
+                name="position"
+                value={this.state.position} 
+                onChange={this.handleInputChange}
+                />
+                <SearchBar 
+                name="location"
+                value={this.state.location} 
+                onChange={this.handleInputChange}
+                />
+                <SearchButton
+                    disabled={!(this.state.freelancerList.position && this.state.freelancerList.location)}
+                    onClick={this.handleFormSubmit}
+                />
                 {this.state.freelancerList.length ? (
                     <List>
                         {this.state.freelancerList.map(freelancer => (
@@ -83,13 +73,11 @@ class SearchResults extends Component {
                         ))}
                     </List>
                 ) : (
-                        <h3 style={{ paddingTop: 100, textAlign: "center" }}> No search results. </h3>
-                    )}
-            </div>
+                    <h3> No search results </h3>
+                )}
+            </>
         )
-                
-
     }
 }
 
-export default SearchResults; 
+export default ActualSearchResults; 
