@@ -13,7 +13,7 @@ router.route("/form")
 
 router
     .route("/search")
-    .get(freelancersController.findAll)
+    .get(freelancersController.searchByPositionAndLocation)
     
 router // This will be routed to when you click on a freelancer profile after the search
     .route("/:id")

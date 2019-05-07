@@ -50,19 +50,24 @@ class SearchResults extends Component {
             .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
             .catch(err => console.log(err))
         console.log("clicked")
-        console.log(this.state.SearchBar.position)
+       
 
     }
     render() {
         return (
             <>
                 <h2>Search</h2>
+            
                 <SearchBar 
+                    name="position"
                     value={this.state.position} 
                     onChange={this.handleInputChange}
-                   
-                    
-                    />
+                />
+                <SearchBar 
+                    name="location"
+                    value={this.state.location} 
+                    onChange={this.handleInputChange}
+                />
                     <SearchButton
                         disabled={!(this.state.position && this.state.location)}
                         onClick={this.handleFormSubmit}

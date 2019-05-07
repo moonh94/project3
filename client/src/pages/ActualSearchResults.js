@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 // import styled from "styled-components";
+import {Link} from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import SearchButton from "../components/SearchButton";
 import ListItem from "../components/ListItem";
@@ -66,9 +67,11 @@ class ActualSearchResults extends Component {
                         {this.state.freelancerList.map(freelancer => (
                             <ListItem 
                                 key={freelancer._id}>
-                                <strong>
-                                    {freelancer.position} in {freelancer.location}
-                                </strong>
+                                <Link to={"/freelancers/" + freelancer._id}>
+                                    <strong>
+                                        {freelancer.position} in {freelancer.location}
+                                    </strong>
+                                </Link>
                             </ListItem>
                         ))}
                     </List>
