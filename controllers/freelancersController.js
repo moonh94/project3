@@ -46,9 +46,12 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     createUser: function(req, res){
+        req.body.rate=parseFloat(req.body.rate)
+        console.log(req.body)
+        
         db.Freelancer
             .create(req.body)
-            .then(res.json("freelancer added!"))
+            .then(data => res.json("freelancer added!"))
             // .then(dbModel => res.json("user created!"))
             .catch(err => res.status(422).json(err))
     }

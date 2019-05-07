@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Confirmation extends Component{
+class Confirm extends Component{
     render(){
         return(
             <div>
@@ -10,4 +10,4 @@ class Confirmation extends Component{
     }
 }
 
-export default Confirmation ;
+export default Confirm ;
