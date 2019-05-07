@@ -6,11 +6,11 @@ import SearchButton from "../components/SearchButton";
 import ListItem from "../components/ListItem";
 import List from "../components/List";
 
-class Search extends Component {
+class SearchResults extends Component {
     state = {
         freelancerList: [],
         name: "",
-        positions: "",
+        position: "",
         location: "",
         bio: "",
         rate: 0
@@ -22,15 +22,9 @@ class Search extends Component {
         this.loadResults();
     }
 
-    // loadResults = () => {
-    //     API.getFreelancerByPositionAndLocation()
-    //         .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
-    //         .catch(err => console.log(err))
-    // }
-
     loadResults = () => {
         API.getFreelancers()
-            .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
+            .then(res => this.setState({ freelancerList: res.data, name: "", position: "", location: "", bio: "", rate: 0 }))
             .catch(err => console.log(err))
     }
 
@@ -62,7 +56,8 @@ class Search extends Component {
                 {this.state.freelancerList.length ? (
                     <List>
                         {this.state.freelancerList.map(freelancer => (
-                            <ListItem key={freelancer._id}>
+                            <ListItem 
+                                key={freelancer._id}>
                                 <strong>
                                     {freelancer.position} in {freelancer.location}
                                 </strong>
@@ -78,4 +73,4 @@ class Search extends Component {
     }
 }
 
-export default Search; 
+export default SearchResults; 

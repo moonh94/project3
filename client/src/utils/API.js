@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     getFreelancers: function(){
-        return axios.get("/api/freelancers")
+        return axios.get("/api/freelancers/search")
     },
     getFreelancer: function(id){
         return axios.get("/api/freelancers/" + id)
