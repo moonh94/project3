@@ -21,8 +21,9 @@ export default {
         return axios.get(`/api/freelancers/searchresults/${position}/${location}`)
     },
     //This will be for a freelancer to create his/her own profile 
-    createUser: function(id, userData){
-        return axios.post("/api/freelancers/freelancers/" + id, userData)
+    createUser: function(freelancerData){
+        console.log(freelancerData)
+        return axios.post("/api/freelancers/register/", freelancerData)
     }
 };
 

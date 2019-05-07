@@ -27,7 +27,7 @@ class Login extends Component {
     }
     
     
-    render() {
+    render() { //probably import alex's passport login page
         return (
             <>
                 <Jumbotron>
@@ -52,7 +52,7 @@ class Login extends Component {
                     />
 
                     <FormBtn
-                        disabled={!(this.state.name && this.state.position)}
+                        disabled={!(this.state.name && this.state.password)}
                         onClick={this.handleFormSubmit}
                     >
                         Login
