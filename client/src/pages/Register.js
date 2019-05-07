@@ -14,7 +14,9 @@ class Register extends Component {
         position: "",
         bio: "",
         location: "",
-        rate: 0
+        rate: 0,
+        email: "",
+        password: ""
     };
 
     componentDidMount() {
@@ -24,7 +26,7 @@ class Register extends Component {
     loadFreelancers = () => {
         API.getFreelancers()
             .then(res =>
-                this.setState({ freeLancers: res.data, name: "", position: "", bio: "", location: "", rate: "" })
+                this.setState({ freeLancers: res.data, name: "", position: "", bio: "", location: "", rate: "", email:"", password:"" })
             )
             .catch(err => console.log(err));
     };
@@ -45,7 +47,9 @@ class Register extends Component {
                 position: this.state.position,
                 bio: this.state.bio,
                 location: this.state.location,
-                rate: this.state.rate
+                rate: this.state.rate,
+                email: this.state.email,
+                password: this.state.password
             })
                 .then(res => this.loadFreelancers())
                 .catch(err => console.log(err));
@@ -98,6 +102,21 @@ class Register extends Component {
                         name="rate"
                         placeholder="Hourly Rate"
                     />
+                     <h2>Email: {this.state.email}</h2>
+                    <Input
+                        value={this.state.email}
+                        onChange={this.handleInputChange}
+                        name="email"
+                        placeholder="Hourly Rate"
+                    />
+                    <h2>Password: {this.state.password}</h2>
+                    <Input
+                        value={this.state.password}
+                        onChange={this.handleInputChange}
+                        name="password"
+                        placeholder="Password"
+                    />
+                   
                     <FormBtn
                         disabled={!(this.state.name && this.state.position && this.state.location)}
                         onClick={this.handleFormSubmit}
