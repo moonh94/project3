@@ -1,25 +1,23 @@
-<<<<<<< HEAD
+// import React from 'react';
+// import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
-import React from 'react';
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
-
- export default class Example extends React.Component {
-   render() {
-     return (
-       <Form style={{paddingTop: 50, paddingLeft: 250, paddingRight: 250}}>
-         <FormGroup>
-           <Label for="exampleEmail">Email</Label>
-           <Input type="email" name="email" id="exampleEmail" placeholder="email@gmail.com" />
-         </FormGroup>
-         <FormGroup>
-           <Label for="examplePassword">Password</Label>
-           <Input type="password" name="password" id="examplePassword" placeholder="password" />
-         </FormGroup>
-         <Button>Login</Button>
-       </Form>
-     );
-   }
- }
+//  export default class Example extends React.Component {
+//    render() {
+//      return (
+//        <Form style={{paddingTop: 50, paddingLeft: 250, paddingRight: 250}}>
+//          <FormGroup>
+//            <Label for="exampleEmail">Email</Label>
+//            <Input type="email" name="email" id="exampleEmail" placeholder="email@gmail.com" />
+//          </FormGroup>
+//          <FormGroup>
+//            <Label for="examplePassword">Password</Label>
+//            <Input type="password" name="password" id="examplePassword" placeholder="password" />
+//          </FormGroup>
+//          <Button>Login</Button>
+//        </Form>
+//      );
+//    }
+//  }
 
 // class Example extends React.Component {
 //   constructor(props, context) {
@@ -80,6 +78,4 @@ import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 // }
 
 // export default Example;
-=======
 export {default} from "./Login";
->>>>>>> 7dfea7f0896d2a352a3cb82d5797d572f8b162cb

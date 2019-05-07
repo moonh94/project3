@@ -32,15 +32,7 @@ const NavBar = () => {
                         </NavLink>
                     </li>
                     <li className="nav-link">
-                        <NavLink 
-                            // className="nav-link" 
-                            // activeClassName ="active"
-                            // isActive={() => window.location.pathname === "/login"}
-                            // to="/login"
-                          >
                           <Modal />
-                            Login
-                        </NavLink>
                     </li>
                     <li className="nav-link" >
                         <NavLink 

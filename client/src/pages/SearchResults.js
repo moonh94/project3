@@ -10,7 +10,7 @@ class Search extends Component {
     state = {
         freelancerList: [],
         name: "",
-        positions: "",
+        position: "",
         location: "",
         bio: "",
         rate: 0
@@ -53,12 +53,15 @@ class Search extends Component {
     render() {
         return (
             <>
-                <h2>Search</h2>
-                <SearchBar />
+                <h2 style={{ textAlign: "center", paddingTop: 50 }}>Search</h2>
+                <span className="rowSearch" style={{ paddingTop: 0 }}>
+                    <SearchBar />
                     <SearchButton
+                        style={{display: "inline-flex", flexDirection: "row"}}
                         disabled={!(this.state.position && this.state.location)}
                         onClick={this.handleFormSubmit}
                     />
+                </span>
                 {this.state.freelancerList.length ? (
                     <List>
                         {this.state.freelancerList.map(freelancer => (
@@ -70,8 +73,8 @@ class Search extends Component {
                         ))}
                     </List>
                 ) : (
-                    <h3> No search results </h3>
-                )}
+                        <h3 style={{ paddingTop: 100, textAlign: "center" }}> No search results. </h3>
+                    )}
             </>
         )
 

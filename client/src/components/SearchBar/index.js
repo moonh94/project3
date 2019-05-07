@@ -1,18 +1,16 @@
-import React from "react";
 
+import React from "react";
 
 function SearchBar(props) {
     return (
-        <div style={{paddingTop: 50, paddingLeft: 250, paddingRight: 250}}
+        <div style={{paddingTop: 30, paddingLeft: 50, paddingRight:50}}
             className="input-group input-group-lg">
-            <input style={{paddingRight: 30}} className="form-control" type="text" {...props} />
-            <input className="form-control" type="text" {...props} />
-<<<<<<< HEAD
-            
-=======
+            <input style={{paddingRight: 30, width: 75}} className="form-control" type="text" placeholder="Position" {...props} />
+            <input style={{marginLeft: 30, width: 75}} className="form-control" type="text" placeholder="Location" {...props}  />
+            {/* <i class='fas fa-search'></i> */}
             {/* <button id="submit-btn" class="btn btn-primary" type="submit">Submit</button> */}
->>>>>>> 7dfea7f0896d2a352a3cb82d5797d572f8b162cb
         </div>
+
     );
 }
 

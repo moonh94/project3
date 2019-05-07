@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
+// import DeleteBtn from "../components/DeleteBtn"
 import API from "../utils/API";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../components/Grid";
 // import { ResultList, ResultListItem } from "../components/Result";
+import { Col, Form, FormGroup, Label} from 'reactstrap';
 import { Input, TextArea, FormBtn } from "../components/Form";
+import "../Styles/register.css";
 
 class Register extends Component {
     state = {
@@ -14,8 +15,58 @@ class Register extends Component {
         position: "",
         bio: "",
         location: "",
-        rate: 0
+        rate: 0,
+        validUsername: false,
+        validPassword: false,
+        confirmPassword: false
     };
+
+    componentDidUpdate() {
+        this.validatePassword();
+        this.confirmPassword();
+        this.validateUsername();
+    }
+
+    validateUsername() {
+        if (this.props.username.length > 1 && !this.state.validUsername) {
+            this.setState({
+                validUsername: true
+            });
+        }
+        if (this.props.username.length < 1 && this.state.validUsername) {
+            this.setState({
+                validUsername: false
+            });
+        }
+    }
+
+    validatePassword() {
+        let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
+        let valid = strongPassword.test(this.props.password);
+        if (!this.state.validPassword && valid) {
+            this.setState({
+                validPassword: true
+            });
+        }
+        if (this.state.validPassword && !valid) {
+            this.setState({
+                validPassword: false,
+            });
+        }
+    }
+
+    confirmPassword() {
+        if (this.props.password === this.props.confirmPassword && !this.state.confirmPassword && this.props.password) {
+            this.setState({
+                confirmPassword: true
+            });
+        }
+        if (this.props.password !== this.props.confirmPassword && this.state.confirmPassword) {
+            this.setState({
+                confirmPassword: false
+            });
+        }
+    }
 
     componentDidMount() {
         this.loadFreelancers();
@@ -54,11 +105,115 @@ class Register extends Component {
 
     render() {
         return (
-            <>
-                <Jumbotron>
-                    <h1>Become a Freelancer!</h1>
-                </Jumbotron>
-                <form>
+            <div>
+                <h2 style={{ textAlign: "center", paddingTop: 60, paddingBottom: 0 }}>Create Account</h2>
+                <div >
+                <Form className="registerForm" style={{ paddingTop: 20, overflow:"scroll" }}>
+                    <FormGroup row>
+                        <Label for="exampleName" sm={2}>Name</Label>
+                        <Col sm={10}>
+                            <Input
+                                value={this.state.name}
+                                onChange={this.handleInputChange}
+                                name="name"
+                                placeholder="Name"
+                                type="text"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                        <Label for="exampleEmail" sm={2}>Email</Label>
+                        <Col sm={10}>
+                            <Input
+                                value={this.state.name}
+                                onChange={this.handleInputChange}
+                                name="name"
+                                placeholder="Email"
+                                type="text"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                        <Label for="examplePassword" sm={2}>Password</Label>
+                        <Col sm={10}>
+                            <Input
+                                value={this.state.name}
+                                onChange={this.handleInputChange}
+                                name="name"
+                                placeholder="Password"
+                                type="text"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                        <Label for="examplePosition" sm={2}>Position</Label>
+                        <Col sm={10}>
+                            <Input
+                                value={this.state.position}
+                                onChange={this.handleInputChange}
+                                name="position"
+                                placeholder="Position"
+                                type="text"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                        <Label for="exampleBio" sm={2}>Bio</Label>
+                        <Col sm={10}>
+                            {/* <Input type="textarea" name="text" id="exampleText" /> */}
+                            <TextArea
+                                value={this.state.bio}
+                                onChange={this.handleInputChange}
+                                name="bio"
+                                placeholder="Tell Us About Yourself"
+                                type="text"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                        <Label for="examplePosition" sm={2}>Location</Label>
+                        <Col sm={10}>
+                            <Input
+                                value={this.state.position}
+                                onChange={this.handleInputChange}
+                                name="location"
+                                placeholder="Denver"
+                                type="text"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                        <Label for="exampleRate" sm={2}>Rate</Label>
+                        <Col sm={10}>
+                            <Input
+                                value={this.state.rate}
+                                onChange={this.handleInputChange}
+                                name="rate"
+                                placeholder="Hourly Rate"
+                            />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup check row>
+                        <Col sm={{ size: 10, offset: 2 }}>
+                            <FormBtn
+                                disabled={!(this.state.name && this.state.position && this.state.location)}
+                                onClick={this.handleFormSubmit}
+                            >
+                                Submit Information
+              </FormBtn>
+                        </Col>
+                    </FormGroup>
+                </Form>
+                </div>
+
+                {/* <form className="registerForm">
                     <h2>Name: {this.state.name}</h2>
                     <Input
                         value={this.state.name}
@@ -67,7 +222,23 @@ class Register extends Component {
                         placeholder="Name"
                         type="text"
                     />
-                    <h2>Position {this.state.position}</h2>
+                    <h2>Email: {this.state.name}</h2>
+                    <Input
+                        value={this.state.name}
+                        onChange={this.handleInputChange}
+                        name="name"
+                        placeholder="Email"
+                        type="text"
+                    />
+                    <h2>Password: {this.state.name}</h2>
+                    <Input
+                        value={this.state.name}
+                        onChange={this.handleInputChange}
+                        name="name"
+                        placeholder="Password"
+                        type="text"
+                    />
+                    <h2>Position: {this.state.position}</h2>
                     <Input
                         value={this.state.position}
                         onChange={this.handleInputChange}
@@ -104,11 +275,12 @@ class Register extends Component {
                     >
                         Submit Information
               </FormBtn>
-                </form>
-            </>
+                </form> */}
+            </div>
 
         );
     }
 }
 
 export default Register;
+

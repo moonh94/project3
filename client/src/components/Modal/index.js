@@ -1,48 +1,42 @@
-import React from "react";
-import Login from "../Login";
 
 
-const display = {
-    display: 'block'
-  };
-  const hide = {
-    display: 'none'
-  };
-  
-  class Modal extends React.Component {
-    constructor(props) {
-      super(props);
-      this.toggle = this.toggle.bind(this);
-      this.state = {
-        toggle: false
-      }
-    }
-  
-    toggle(event) {
-      this.setState((prevState) => ({
-        toggle: !prevState.toggle
-      }));
-    }
-    render() {
-      var modal = [];
-      modal.push(
-        <div className="modal" style={this.state.toggle ? display : hide}>
-        <div className="modal-content">
-          <Login />
-        </div>
-        <div className="modal-footer">
-          <a className="btn-flat" onClick={this.toggle}>Agree</a>
-        </div>
-      </div>
-      );
-      return (
-        <div>
-          <a className="btn" onClick={this.toggle}>{this.state.toggle ? 'Close modal' : 'Open modal'}</a>
-          {modal}
-         
-        </div>
-      );
-    }
+import React from 'react';
+import Login from "../Login/Login";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
+class ModalExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
   }
- 
-export default Modal;
+
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <Button color="white" onClick={this.toggle}>Login</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>Login</ModalHeader>
+          <ModalBody>
+            <Login />
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle}>Sign In</Button>{' '}
+            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+export default ModalExample;
