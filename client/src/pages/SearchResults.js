@@ -36,19 +36,33 @@ class SearchResults extends Component {
         });
     };
 
+    handleInputChange2 = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
     handleFormSubmit = (event) => {
         event.preventDefault();
+        // this.state.SearchBar.props.position, this.state.match.SearchBar.props.location
         API.getFreelancerByPositionAndLocation()
             .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
             .catch(err => console.log(err))
         console.log("clicked")
+        console.log(this.state.SearchBar.position)
 
     }
     render() {
         return (
             <>
                 <h2>Search</h2>
-                <SearchBar />
+                <SearchBar 
+                    value={this.state.position} 
+                    onChange={this.handleInputChange}
+                   
+                    
+                    />
                     <SearchButton
                         disabled={!(this.state.position && this.state.location)}
                         onClick={this.handleFormSubmit}
