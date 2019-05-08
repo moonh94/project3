@@ -103,7 +103,7 @@ class Register extends Component {
                     email: this.state.email,
                     password: this.state.password
                 })
-                .then(res => this.loadFreelancers())
+                .then(res => this.props.history.push("/confirm"))
                 .catch(err => console.log(err));
         }
     };
@@ -225,12 +225,14 @@ class Register extends Component {
 
                                     <FormGroup check row>
                                         <Col sm={{ size: 10, offset: 2 }}>
+
                                             <FormBtn
                                                 disabled={!(this.state.name && this.state.position && this.state.location)}
                                                 onClick={this.handleFormSubmit}
                                             >
-                                                Submit Information
-                                 </FormBtn>
+                                            Submit Information
+                                                
+                                        </FormBtn>
                                         </Col>
                                     </FormGroup>
                                 </Form>
