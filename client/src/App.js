@@ -9,6 +9,7 @@ import FreelancerProfile from "./pages/FreelancerProfile";
 import ActualSearchResults from "./pages/ActualSearchResults";
 import Register from "./pages/Register"
 import SearchResults from "./pages/SearchResults";
+import Login from "./pages/Login"
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path="/freelancers/:id" component ={FreelancerProfile} />
           <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} 
           />
+          <Route exact path="/login" component={Login}/>
         </Switch>
         <Jumbotron />
   
