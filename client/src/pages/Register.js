@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import { Col, Form, FormGroup, Label } from 'reactstrap';
 import { Container, Row} from "reactstrap";
+import { Link } from "react-router-dom";
+
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Footer from "../components/Footer"
 import "../Styles/register.css";
@@ -11,12 +13,14 @@ class Register extends Component {
         freelancers: [],
         name: "",
         position: "",
-        bio: "",
         location: "",
         rate: 0,
         validUsername: false,
         validPassword: false,
-        confirmPassword: false
+        confirmPassword: false,
+        bio: "",
+        email:"",
+        password: ""
     };
 
     componentDidUpdate() {
@@ -73,7 +77,7 @@ class Register extends Component {
     loadFreelancers = () => {
         API.getFreelancers()
             .then(res =>
-                this.setState({ freeLancers: res.data, name: "", position: "", bio: "", location: "", rate: "" })
+                this.setState({ freeLancers: res.data, name: "", position: "", bio: "", location: "", rate: "", email:"", password:"" })
             )
             .catch(err => console.log(err));
     };
@@ -88,14 +92,17 @@ class Register extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.position && this.state.location) {
+        if (this.state.name && this.state.position && this.state.location && this.state.bio && this.state.rate
+            && this.state.email && this.state.password) {
             API.createUser({
-                name: this.state.name,
-                position: this.state.position,
-                bio: this.state.bio,
-                location: this.state.location,
-                rate: this.state.rate
-            })
+                    name: this.state.name,
+                    position: this.state.position,
+                    location: this.state.location,
+                    bio: this.state.bio,
+                    rate: this.state.rate,
+                    email: this.state.email,
+                    password: this.state.password
+                })
                 .then(res => this.loadFreelancers())
                 .catch(err => console.log(err));
         }
