@@ -54,6 +54,14 @@ module.exports = {
             .then(data => res.json("freelancer added!"))
             // .then(dbModel => res.json("user created!"))
             .catch(err => res.status(422).json(err))
+    },
+    updateUser: function(req, res){
+        req.body.rate=parseFloat(req.body.rate)
+        console.log(req.body)
+        db.Freelancer
+            .findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+            .then(dbFreelancer => res.json(dbFreelancer))
+            .catch(err => res.status(422).json(err));
     }
     
 }
