@@ -20,7 +20,7 @@ function Login(props) {
                 </FormGroup>
                 <Button id="loginBtn" onClick={props.handleLogin} block>Sign In </Button>
                 <p className="signupLink">
-                    <Link onClick="javascript:window.location.reload()" to="/register">Don't have an account?  Sign up here</Link>
+                    <Link  to="/register">Don't have an account?  Sign up here</Link>
                 </p>
             </Form>
         </div>
