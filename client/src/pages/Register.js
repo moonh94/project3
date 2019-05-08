@@ -149,9 +149,9 @@ class Register extends Component {
                                         <Label for="exampleEmail" sm={2}>Email</Label>
                                         <Col sm={10}>
                                             <Input
-                                                value={this.state.name}
+                                                value={this.state.email}
                                                 onChange={this.handleInputChange}
-                                                name="name"
+                                                name="email"
                                                 placeholder="Email"
                                                 type="text"
                                             />
@@ -162,9 +162,9 @@ class Register extends Component {
                                         <Label for="examplePassword" sm={2}>Password</Label>
                                         <Col sm={10}>
                                             <Input
-                                                value={this.state.name}
+                                                value={this.state.password}
                                                 onChange={this.handleInputChange}
-                                                name="name"
+                                                name="password"
                                                 placeholder="Password"
                                                 type="text"
                                             />
@@ -199,13 +199,13 @@ class Register extends Component {
                                     </FormGroup>
 
                                     <FormGroup row>
-                                        <Label for="examplePosition" sm={2}>Location</Label>
+                                        <Label for="exampleLocation" sm={2}>Location</Label>
                                         <Col sm={10}>
                                             <Input
-                                                value={this.state.position}
+                                                value={this.state.location}
                                                 onChange={this.handleInputChange}
                                                 name="location"
-                                                placeholder="Denver"
+                                                placeholder="location"
                                                 type="text"
                                             />
                                         </Col>
