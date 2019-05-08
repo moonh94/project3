@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom"
 import FreelancerCard from "../components/FreelancerCard";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 
@@ -15,7 +14,9 @@ class FreelancerProfile extends Component {
             .then(res => this.setState({freelancer: res.data}))
             .catch(err => console.log(err))
     }
+    handleSubmit () {
 
+    }
     render(){
         return (
             <div>

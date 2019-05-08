@@ -1,13 +1,16 @@
 import React from "react";
-
+// import {Button} from "reactstrap";
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-function SearchButton(props) {
+function Searchspan(props) {
   return (
-    <span className="search-button" {...props} role="button" tabIndex="0">
+    <span color="primary" size="sm" className="search-span" {...props}  tabIndex="0">
       Search
     </span>
-  );
-}
 
-export default SearchButton;
+ 
+  );
+};
+
+
+export default Searchspan;
