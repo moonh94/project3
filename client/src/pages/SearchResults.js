@@ -55,9 +55,10 @@ class SearchResults extends Component {
     }
     render() {
         return (
-            <>
-                <h2>Search</h2>
-            
+
+            <div>
+    <h2 style={{ textAlign: "center", paddingTop: 50 }}>Search</h2>
+               <span className="rowSearch" style={{ paddingTop: 0 }}>
                 <SearchBar 
                     name="position"
                     value={this.state.position} 
@@ -69,9 +70,11 @@ class SearchResults extends Component {
                     onChange={this.handleInputChange}
                 />
                     <SearchButton
+                        style={{display: "inline-flex", flexDirection: "row"}}
                         disabled={!(this.state.position && this.state.location)}
                         onClick={this.handleFormSubmit}
                     />
+                </span>
                 {this.state.freelancerList.length ? (
                     <List>
                         {this.state.freelancerList.map(freelancer => (
@@ -84,10 +87,23 @@ class SearchResults extends Component {
                         ))}
                     </List>
                 ) : (
-                    <h3> No search results </h3>
-                )}
-            </>
+                        <div style={{textAlign: "center", 
+                        width: 900,
+                        height: "auto",
+                        paddingTop: 20,
+                        marginTop: 50,
+                        border: 10,
+                        borderStyle: "solid",
+                        borderWidth: 1,
+                        background: "white",
+                        opacity: .9}}>
+
+                            <h3> No search results. </h3> 
+                        </div>
+                    )}
+            </div>
         )
+                
 
     }
 }

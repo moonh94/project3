@@ -8,6 +8,7 @@ import "./style.css";
 function RegisterForm(props) {
 
     return (
+        <div>
         <form>
         <div className="form-group">
             <label for="exampleInputEmail1">Name</label>
@@ -36,7 +37,7 @@ function RegisterForm(props) {
        
         <button {...props} type="submit" className="btn btn-primary">{props.children}</button>
         </form>
-
+        </div>
     );
 }
 export default RegisterForm;
