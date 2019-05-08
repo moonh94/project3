@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     getFreelancers: function(){
-        return axios.get("/api/freelancers/search")
+        return axios.get("/api/freelancers/all")
     },
     getFreelancer: function(id){
         return axios.get("/api/freelancers/" + id)
@@ -24,6 +24,10 @@ export default {
     createUser: function(freelancerData){
         console.log(freelancerData)
         return axios.post("/api/freelancers/register/", freelancerData)
+    },
+    updateUser: function(id, userData){
+        console.log(userData)
+        return axios.put("/api/freelancers/profile/" + id, userData)
     }
 };
 

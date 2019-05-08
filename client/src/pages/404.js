@@ -1,7 +1,7 @@
-import React from "react";
+import React, {Component} from "react";
 import './404.css';
 
-class App extends React.Component {
+class FourOhFour extends Component {
     constructor(props) {
         super(props);
         this.init();
@@ -33,4 +33,6 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default FourOhFour;
+
+// ReactDOM.render(<App />, document.getElementById('app'));
