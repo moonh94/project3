@@ -23,6 +23,7 @@
     "express": "^4.16.4",
     "mongoose": "^5.5.5",
     "morgan": "^1.9.1",
+    "react-mailchimp-subscribe": "^2.1.0",
     "react-router-dom": "^5.0.0"
   }
 }

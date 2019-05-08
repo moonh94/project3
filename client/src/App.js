@@ -11,6 +11,7 @@ import Register from "./pages/Register"
 import SearchResults from "./pages/SearchResults";
 import Login from "./pages/Login"
 
+
 class App extends Component {
 
   render(){
@@ -24,8 +25,8 @@ class App extends Component {
           <Route exact path="/register" component = {Register} />
           <Route exact path="/confirm" component ={Confirm} />
           <Route exact path="/freelancers/:id" component ={FreelancerProfile} />
-          <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} 
-          />
+          <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} />
+         
           <Route exact path="/login" component={Login}/>
         </Switch>
         <Jumbotron />
