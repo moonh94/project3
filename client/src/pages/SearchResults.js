@@ -50,21 +50,25 @@ class SearchResults extends Component {
             .then(res => this.setState({ freelancerList: res.data, position: "", location: "", bio: "", rate: 0 }))
             .catch(err => console.log(err))
         console.log("clicked")
-        console.log(this.state.SearchBar.position)
+       
 
     }
     render() {
         return (
+
             <div>
     <h2 style={{ textAlign: "center", paddingTop: 50 }}>Search</h2>
                <span className="rowSearch" style={{ paddingTop: 0 }}>
                 <SearchBar 
+                    name="position"
                     value={this.state.position} 
                     onChange={this.handleInputChange}
-                   
-                    
-                    />
-
+                />
+                <SearchBar 
+                    name="location"
+                    value={this.state.location} 
+                    onChange={this.handleInputChange}
+                />
                     <SearchButton
                         style={{display: "inline-flex", flexDirection: "row"}}
                         disabled={!(this.state.position && this.state.location)}
@@ -83,7 +87,19 @@ class SearchResults extends Component {
                         ))}
                     </List>
                 ) : (
-                        <h3 style={{ paddingTop: 100, textAlign: "center" }}> No search results. </h3>
+                        <div style={{textAlign: "center", 
+                        width: 900,
+                        height: "auto",
+                        paddingTop: 20,
+                        marginTop: 50,
+                        border: 10,
+                        borderStyle: "solid",
+                        borderWidth: 1,
+                        background: "white",
+                        opacity: .9}}>
+
+                            <h3> No search results. </h3> 
+                        </div>
                     )}
             </div>
         )

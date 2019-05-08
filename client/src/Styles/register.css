@@ -1,8 +1,7 @@
-.registerForm {
-    width: 1000px;
+body {
+    background-image: url("../images/background.jpg");
+    background-size: 100%;
+    width: 100%;
     height: auto;
-    padding-left: 125px;
-    padding-right: 100px;
-    margin: 50px;
-
+    background-repeat: repeat-y;
 }

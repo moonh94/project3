@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Jumbotron() {
     return (
         <div
@@ -7,6 +8,7 @@ function Jumbotron() {
             className="jumbotron"
         >
         <h2 style={{textAlign: "center"}}>Where Freelancers Network </h2>
+     
         </div>
     );
 }
