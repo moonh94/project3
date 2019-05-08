@@ -7,8 +7,11 @@ import Footer from "./components/Footer";
 import Jumbotron from "./components/Jumbotron";
 import FreelancerProfile from "./pages/FreelancerProfile";
 import ActualSearchResults from "./pages/ActualSearchResults";
-import Register from "./pages/Register"
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import UserProfile from "./pages/UserProfile"
 import SearchResults from "./pages/SearchResults";
+import FourOhFour from "./pages/404";
 
 class App extends Component {
 
@@ -23,8 +26,10 @@ class App extends Component {
           <Route exact path="/register" component = {Register} />
           <Route exact path="/confirm" component ={Confirm} />
           <Route exact path="/freelancers/:id" component ={FreelancerProfile} />
-          <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} 
-          />
+          <Route exact path="/searchresults/:position/:location" component ={ActualSearchResults} />
+          <Route exact path="/login" component ={Login} />
+          <Route exact path="/profile/:id" component ={UserProfile} />
+          <Route component= {FourOhFour} />
         </Switch>
         <Jumbotron />
   

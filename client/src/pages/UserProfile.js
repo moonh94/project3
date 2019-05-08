@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 // import { ResultList, ResultListItem } from "../components/Result";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Register extends Component {
+
+class UserUpdate extends Component {
     state = {
         freelancers: [],
         name: "",
@@ -21,15 +22,19 @@ class Register extends Component {
 
     componentDidMount() {
         this.loadFreelancers();
+    
     }
 
     loadFreelancers = () => {
         API.getFreelancers()
-            .then(res =>
-                this.setState({ freeLancers: res.data, name: "", position: "", bio: "", location: "", rate: "", email:"", password:"" })
-            )
+            .then(res =>{
+
+            console.log(res)
+                this.setState({ freelancers: res.data, name: "", position: "", bio: "", location: "", rate: "", email:"", password:"" })
+        })
             .catch(err => console.log(err));
     };
+
 
 
     handleInputChange = event => {
@@ -39,11 +44,11 @@ class Register extends Component {
         });
     };
 
-    handleFormSubmit = event => {
+    
+
+    handleFormSubmit = (event, id) => {
         event.preventDefault();
-        if (this.state.name && this.state.position && this.state.location && this.state.bio && this.state.rate
-            && this.state.email && this.state.password) {
-            API.createUser({
+            API.updateUser(id, {
                     name: this.state.name,
                     position: this.state.position,
                     location: this.state.location,
@@ -54,14 +59,16 @@ class Register extends Component {
                 })
                 .then(res => this.loadFreelancers())
                 .catch(err => console.log(err));
-        }
+            // }
     };
+
+  
 
     render() {
         return (
             <>
                 <Jumbotron>
-                    <h1>Become a Freelancer!</h1>
+                    <h1>Update your profile information</h1>
                 </Jumbotron>
                 <form>
                     <h2>Name:</h2>
@@ -69,7 +76,7 @@ class Register extends Component {
                         value={this.state.name}
                         onChange={this.handleInputChange}
                         name="name"
-                        placeholder="Name"
+                        placeholder={this.state.name}
                         type="text"
                     />
                     <h2>Position:</h2>
@@ -77,7 +84,7 @@ class Register extends Component {
                         value={this.state.position}
                         onChange={this.handleInputChange}
                         name="position"
-                        placeholder="Position"
+                        placeholder={this.state.position}
                         type="text"
                     />
                     <h2>Bio:</h2>
@@ -85,7 +92,7 @@ class Register extends Component {
                         value={this.state.bio}
                         onChange={this.handleInputChange}
                         name="bio"
-                        placeholder="Tell Us About Yourself"
+                        placeholder={this.state.bio}
                         type="text"
                     />
                     <h2>Location:</h2>
@@ -93,7 +100,7 @@ class Register extends Component {
                         value={this.state.location}
                         onChange={this.handleInputChange}
                         name="location"
-                        placeholder="Location"
+                        placeholder={this.state.location}
                         type="text"
                     />
                     <h2>Rate:</h2>
@@ -101,14 +108,14 @@ class Register extends Component {
                         value={this.state.rate}
                         onChange={this.handleInputChange}
                         name="rate"
-                        placeholder="Hourly Rate"
+                        placeholder={this.state.rate}
                     />
                     <h2>Email:</h2>
                     <Input
                         value={this.state.email}
                         onChange={this.handleInputChange}
                         name="email"
-                        placeholder="Email"
+                        placeholder={this.state.email}
                     />
                      
                     <h2>Password:</h2>
@@ -116,18 +123,16 @@ class Register extends Component {
                         value={this.state.password}
                         onChange={this.handleInputChange}
                         name="password"
-                        placeholder="Password"
+                        placeholder={this.state.password}
                         type="password"
                     />
                    
-                   <Link to="/confirm">
-                        <FormBtn
-                            disabled={!(this.state.name && this.state.position && this.state.location)}
-                            onClick={this.handleFormSubmit}     
-                        >
-                        Submit Information
-                        </FormBtn>
-                    </Link>
+                    <FormBtn
+                        disabled={!(this.state.name && this.state.position && this.state.location)}
+                        onClick={(event) => this.handleFormSubmit(event, this.props.match.params.id)}   
+                    >
+                        Update Information
+                    </FormBtn>
               
                 </form>
             </>
@@ -136,4 +141,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default UserUpdate;

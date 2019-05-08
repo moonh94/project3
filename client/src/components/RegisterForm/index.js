@@ -25,7 +25,7 @@ function RegisterForm(props) {
             <input type="name" className="form-control" {...props}/>
         </div>
         <div className="form-group">
-            <label for="exampleInputPassword1">Location:</label>
+            <label for="exampleInputPassword1">Location</label>
             <input type="name" className="form-control" {...props}/>
         </div>
         <div className="form-group">

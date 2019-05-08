@@ -25,7 +25,7 @@ const NavBar = () => {
                             className="nav-link" 
                             activeClassName ="active"
                             isActive={() => window.location.pathname === "/login"}
-                            to="/discover">
+                            to="/login">
                             Login
                         </NavLink>
                     </li>

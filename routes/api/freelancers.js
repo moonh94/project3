@@ -12,6 +12,10 @@ router.route("/confirm")
 router.route("/form")
 
 router
+    .route("/all")
+    .get(freelancersController.findAll)
+
+router
     .route("/search")
     .get(freelancersController.searchByPositionAndLocation)
     
@@ -35,6 +39,10 @@ router
 router
     .route("/register")
     .post(freelancersController.createUser)
+
+router 
+    .route("/profile/:id")
+    .put(freelancersController.updateUser)
 
 module.exports = router;
     
