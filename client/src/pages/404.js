@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import source from "../images/404logo.png"
 import './404.css';
 
 class FourOhFour extends Component {
@@ -23,11 +24,9 @@ class FourOhFour extends Component {
         return <div className='container' style={bgStyle}>
             <div className='overlay'></div>
             <div className='text' style={this.state.textStyle}>
-                <span>404.</span>
-                <br />
-                <span>Congratulations !</span>
-                <br />
-                <span>You broke the thing.</span>
+                <p >
+                <img src={source} style={{height:"610px"}} alt="RunningMan" />
+                </p>
             </div>
         </div>
     }
