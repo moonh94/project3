@@ -79,7 +79,8 @@ class SearchResults extends Component {
                     />
                 </span>
                 {this.state.freelancerList.length ? (
-                    <List>
+        
+                    <List >
                         {this.state.freelancerList.map(freelancer => (
                             <ListItem 
                                 key={freelancer._id}>

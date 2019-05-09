@@ -1,18 +1,21 @@
 import React from "react";
+
 import { Container, Row, Col } from "reactstrap";
 
 function Footer() {
     return (
-        <div style={{
+        <div 
+        style={{
             width: "100%",
             height: 90,
-            position: "absolute",
+            position: "static",
             left: 0,
             right: 0,
             bottom: 0,
             background: "#E9ECEF",
             paddingTop: 20,
-            marginTop: -40
+            marginTop: 40,
+            
         }} >
             <Container>
                 <Row>
@@ -27,7 +30,7 @@ function Footer() {
                 </Col>
                 </Row>
             </Container>
-        </div>
+         </div>
     )
 }
 

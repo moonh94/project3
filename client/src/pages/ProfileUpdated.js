@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Col, Row} from "reactstrap";
-const Confirm = () => {
+
+
+
+const ProfileUpdated = () => {
     return (
         <>
             <Container style={{
@@ -20,7 +23,7 @@ const Confirm = () => {
                     <Col sm="2">
                     </Col>
                     <Col sm="8">
-                        <p>Congratulations! You are now a registered Freelancer!</p>
+                        <p>Your profile has been updated.</p>
 
                         <li className="nav-link">
                             <Link to={"/"}>Return Home</Link>
@@ -37,4 +40,4 @@ const Confirm = () => {
     )
 }
 
-export default Confirm;
+export default ProfileUpdated;
