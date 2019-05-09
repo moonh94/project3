@@ -36,7 +36,7 @@ class App extends Component {
             <Route exact path="/searchresults/:position/:location" component={ActualSearchResults} />
             <Route exact path="/profile/:id" component={UserProfile} />
             <Route exact path="/request" component={RequestWork} />
-            <Route exact path="/profileupdate" component={ProfileUpdated} />
+            <Route exact path="/profileupdated" component={ProfileUpdated} />
             <Route component={FourOhFour} />
           </Switch>
         </div>
