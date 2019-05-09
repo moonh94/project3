@@ -38,8 +38,10 @@ function FreelancerCard(props) {
                                     </div>
                                 </CardText>
                                 <div className="cardButton" style={{ float: "right" }}>
+                                
                                     <span className="input-group-btn">
                                     <Link to="/request">Request Service </Link></span>
+                               
                                     <span className="input-group-btn">
                                     <Link to="/search">Go Back</Link></span>
                                     
