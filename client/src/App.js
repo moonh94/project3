@@ -11,6 +11,7 @@ import ActualSearchResults from "./pages/ActualSearchResults";
 import Login from "./pages/Login";
 import UserProfile from "./pages/UserProfile"
 import SearchResults from "./pages/SearchResults";
+import ProfileUpdated from "./pages/ProfileUpdated";
 import FourOhFour from "./pages/404";
 
 import RequestWork from "./pages/RequestWork";
@@ -22,22 +23,23 @@ class App extends Component {
   render() {
     return (
       <Router>
-          <div className="mainBody" style={{ paddingBottom: 60 }}>
-            <NavBar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/search" component={ActualSearchResults} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/confirm" component={Confirm} />
-              <Route exact path="/login" component={Modal} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/freelancers/:id" component={FreelancerProfile} />
-              <Route exact path="/searchresults/:position/:location" component={ActualSearchResults} />
-              <Route exact path="/profile/:id" component ={UserProfile} />
-              <Route exact path="/request" component={RequestWork} />
-              <Route component= {FourOhFour} />
-            </Switch>
-          </div>
+        <div className="mainBody" style={{}}>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/search" component={ActualSearchResults} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/confirm" component={Confirm} />
+            <Route exact path="/login" component={Modal} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/freelancers/:id" component={FreelancerProfile} />
+            <Route exact path="/searchresults/:position/:location" component={ActualSearchResults} />
+            <Route exact path="/profile/:id" component={UserProfile} />
+            <Route exact path="/request" component={RequestWork} />
+            <Route exact path="/profileupdate" component={ProfileUpdated} />
+            <Route component={FourOhFour} />
+          </Switch>
+        </div>
       </Router>
     )
   }

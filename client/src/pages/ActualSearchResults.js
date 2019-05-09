@@ -88,6 +88,7 @@ class ActualSearchResults extends Component {
 
                 <div >
                 {this.state.freelancerList.length ? (
+            
                     <List>
                         {this.state.freelancerList.map(freelancer => (
                             <ListItem 

@@ -44,6 +44,15 @@ const NavBar = () => {
                             Register
                         </NavLink>
                     </li>
+                    <li className="nav-link" >
+                        <NavLink 
+                            className="nav-link" 
+                            activeClassName ="active"
+                            isActive={() => window.location.pathname === "/userprofile/:id"}
+                            to="/register">
+                            Profile
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>
