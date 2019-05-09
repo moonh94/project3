@@ -3,7 +3,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../Modal/index";
 import "../../Styles/NavBar.css";
-import source from "../../images/LogoMakr_2TZqvR.png"
+import source from "../../images/NewNewLogo.png"
 
 
 const NavBar = () => {
