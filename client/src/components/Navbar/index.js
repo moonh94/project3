@@ -2,13 +2,15 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "../Modal/index";
-import "../../Styles/NavBar.css"
+import "../../Styles/NavBar.css";
+import source from "../../images/LogoMakr_2TZqvR.png"
+
 
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">
-            <img src="../../images/LogoMakr_7MiiMb.png" /></Link>
+            <img src={source} alt="RunningMan" /></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

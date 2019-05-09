@@ -55,7 +55,7 @@ class UserUpdate extends Component {
             email: this.state.email,
             password: this.state.password
         })
-            .then(res => this.props.history.push("/profileupdate"))
+            .then(res => this.loadFreelancers())
             .catch(err => console.log(err));
         // }
     };
