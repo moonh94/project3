@@ -45,6 +45,16 @@ class ActualSearchResults extends Component {
 
 
     }
+
+    ternary = () => {
+        console.log("hey");
+        return (this.state.position === "" && this.state.location === "") ? (
+            <h3 style={{ paddingTop: 100, textAlign: "center" }}> Please Make a Search </h3>
+        ) : (
+            <h3 style={{ paddingTop: 100, textAlign: "center" }}> Keep typing... </h3>
+        )
+    }
+
     render() {
         return (
             <>
@@ -101,9 +111,10 @@ class ActualSearchResults extends Component {
                             </ListItem>
                         ))}
                     </List>
-                ) : (
-                        <h3 style={{ paddingTop: 100, textAlign: "center" }}> No search results. </h3>
-                    )}
+                ) : ( this.ternary()
+                        // <h3 style={{ paddingTop: 100, textAlign: "center" }}> No search results. </h3>
+                    )
+                    }
                 </div>
             </>
         )
