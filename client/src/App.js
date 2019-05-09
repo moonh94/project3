@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="mainBody" style={{}}>
+        <div className="mainBody" style={{marginBottom: 60}}>
           <NavBar />
           <Switch>
             <Route exact path="/" component={Home} />
